@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michele Brandolin - Software Architect & Full Stack Developer</title>
+    <meta name="description" content="Software Architect e Full Stack Developer con 25 anni di esperienza. Specializzato in Laravel, PHP, e sviluppo web moderno.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #667eea22 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #764ba222 0%, transparent 50%);
+        }
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        .tech-item {
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            transform: translateY(-2px);
+            background-color: rgb(55 65 81 / 0.5) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800/50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold gradient-text">MB</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experience</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#experience" class="block text-gray-300 hover:text-white transition-colors">Experience</a>
+                <a href="#projects" class="block text-gray-300 hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-pattern relative">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8 text-center lg:text-left">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                            Michele<br>
+                            <span class="gradient-text">Brandolin</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-gray-300 font-light">
+                            Software Architect & Full Stack Developer
+                        </p>
+                        <p class="text-lg text-gray-400 max-w-lg">
+                            25 anni di esperienza nello sviluppo web. Specializzato in Laravel, 
+                            architetture scalabili e soluzioni innovative.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            Contattami
+                        </a>
+                        <a href="https://github.com/metalogico" target="_blank" class="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 floating-animation">
+                            <div class="w-full h-full rounded-full bg-gray-900 p-2">
+                                <!-- Sostituisci questo placeholder con la tua foto -->
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='200' cy='200' r='180' fill='url(%23grad)'/%3E%3Ctext x='200' y='220' font-family='Inter, Arial' font-size='80' font-weight='600' text-anchor='middle' fill='%23ffffff'%3EMB%3C/text%3E%3C/svg%3E" 
+                                     alt="Michele Brandolin" 
+                                     class="w-full h-full object-cover rounded-full">
+                            </div>
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
+                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-500/20 rounded-full blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Chi sono</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Sviluppatore web dal 2000 con una forte passione per l'architettura software e 
+                        la risoluzione creativa dei problemi. Mi specializzo nella creazione di applicazioni 
+                        web complesse e scalabili.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Attualmente sto espandendo le mie competenze nello sviluppo mobile con Flutter, 
+                        sempre alla ricerca di nuove tecnologie e sfide interessanti.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">Laravel</span>
+                        <span class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">PHP</span>
+                        <span class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium">JavaScript</span>
+                        <span class="px-4 py-2 bg-red-500/20 text-red-300 rounded-full text-sm font-medium">Python</span>
+                        <span class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">Flutter</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-6 bg-gray-700/50 rounded-lg card-hover">
+                            <div class="text-3xl font-bold text-blue-400 mb-2">25+</div>
+                            <div class="text-gray-300 text-sm">Anni di esperienza</div>
+                        </div>
+                        <div class="text-center p-6 bg-gray-700/50 rounded-lg card-hover">
+                            <div class="text-3xl font-bold text-purple-400 mb-2">100+</div>
+                            <div class="text-gray-300 text-sm">Progetti completati</div>
+                        </div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20 card-hover">
+                        <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
+                            Software Architect
+                        </div>
+                        <div class="text-gray-300 text-sm">Attualmente presso Heply SRL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder per la parte 2 -->
+    <div id="part2-placeholder" class="text-center py-20 text-gray-400">
+        <!-- Qui verrà inserita la parte 2: Experience, Projects, Contact -->
+        <p>Parte 2 della pagina sarà inserita qui...</p>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling per i link della navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Chiudi il menu mobile se aperto
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Background animation con Three.js
+        function initBackground() {
+            const canvas = document.getElementById('background-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // Creare particelle
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const colors = [];
+            
+            for (let i = 0; i < 100; i++) {
+                vertices.push(
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20
+                );
+                
+                colors.push(
+                    Math.random() * 0.5 + 0.5,
+                    Math.random() * 0.5 + 0.5,
+                    1
+                );
+            }
+            
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            
+            const material = new THREE.PointsMaterial({ 
+                size: 0.1, 
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.6
+            });
+            
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+            
+            camera.position.z = 5;
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                points.rotation.x += 0.001;
+                points.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // Gestire il resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // Inizializzare quando la pagina è caricata
+        window.addEventListener('load', initBackground);
+
+        // GSAP animations
+        if (typeof gsap !== 'undefined') {
+            gsap.from(".floating-animation", {duration: 2, y: 50, opacity: 0, ease: "bounce.out"});
+            gsap.from("h1", {duration: 1.5, x: -100, opacity: 0, delay: 0.5});
+            gsap.from(".card-hover", {duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 1});
+        }
+    </script>
+</body>
+</html>

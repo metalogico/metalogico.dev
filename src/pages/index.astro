@@ -1,0 +1,1081 @@
+---
+// Michele Brandolin - Personal Homepage
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			is:inline
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-K67NXFTFPG"
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-K67NXFTFPG");
+		</script>
+		<link rel="icon" type="image/svg" href="/favicon.svg" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Michele Brandolin - Software Architect & Full Stack Developer
+		</title>
+		<meta
+			name="description"
+			content="Software Architect and Full Stack Developer with 25 years of experience. Specialized in Laravel, PHP, and modern web development."
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+		></script>
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body class="bg-gray-900 text-white overflow-x-hidden">
+		<canvas id="background-canvas"></canvas>
+
+		<!-- Navigation -->
+		<nav
+			class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800/50"
+		>
+			<div class="max-w-6xl mx-auto px-6 py-4">
+				<div class="flex justify-between items-center">
+					<div class="text-xl font-bold gradient-text">
+						Metalogico
+					</div>
+					<div class="hidden md:flex space-x-8">
+						<a
+							href="#about"
+							class="text-gray-300 hover:text-white transition-colors"
+							>About</a
+						>
+						<a
+							href="#experience"
+							class="text-gray-300 hover:text-white transition-colors"
+							>Experience</a
+						>
+						<a
+							href="#projects"
+							class="text-gray-300 hover:text-white transition-colors"
+							>Projects</a
+						>
+						<a
+							href="#contact"
+							class="text-gray-300 hover:text-white transition-colors"
+							>Contact</a
+						>
+					</div>
+					<button
+						id="mobile-menu-toggle"
+						class="md:hidden text-white"
+					>
+						<i data-lucide="menu" class="w-6 h-6"></i>
+					</button>
+				</div>
+				<!-- Mobile Menu -->
+				<div
+					id="mobile-menu"
+					class="hidden md:hidden mt-4 pb-4 space-y-2"
+				>
+					<a
+						href="#about"
+						class="block text-gray-300 hover:text-white transition-colors"
+						>About</a
+					>
+					<a
+						href="#experience"
+						class="block text-gray-300 hover:text-white transition-colors"
+						>Experience</a
+					>
+					<a
+						href="#projects"
+						class="block text-gray-300 hover:text-white transition-colors"
+						>Projects</a
+					>
+					<a
+						href="#contact"
+						class="block text-gray-300 hover:text-white transition-colors"
+						>Contact</a
+					>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section
+			class="min-h-screen flex items-center justify-center bg-pattern relative"
+		>
+			<div class="max-w-6xl mx-auto px-6 py-20">
+				<div class="grid lg:grid-cols-2 gap-12 items-center">
+					<!-- Text Content -->
+					<div class="space-y-8 text-center lg:text-left">
+						<div class="space-y-4">
+							<h1
+								class="text-5xl lg:text-7xl font-bold leading-tight"
+							>
+								Michele<br />
+								<span class="gradient-text">Brandolin</span>
+							</h1>
+							<p
+								class="text-xl lg:text-2xl text-gray-300 font-light"
+							>
+								Software Architect & Full Stack Developer
+							</p>
+							<p class="text-lg text-gray-400 max-w-lg">
+								25 years of experience in web development.
+								Specialized in Laravel, scalable architectures
+								and innovative solutions.
+							</p>
+						</div>
+
+						<div
+							class="flex flex-wrap gap-4 justify-center lg:justify-start"
+						>
+							<a
+								href="#contact"
+								class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+							>
+								Contact me
+							</a>
+							<a
+								href="https://github.com/metalogico"
+								target="_blank"
+								class="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-colors"
+							>
+								GitHub
+							</a>
+						</div>
+					</div>
+
+					<!-- Profile Image -->
+					<div class="flex justify-center lg:justify-end">
+						<div class="relative">
+							<div
+								class="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 floating-animation"
+							>
+								<div
+									class="w-full h-full rounded-full bg-gray-900 p-2"
+								>
+									<img
+										src="/avatar.png"
+										alt="Michele Brandolin"
+										class="w-full h-full object-cover rounded-full"
+									/>
+								</div>
+							</div>
+							<!-- Decorative elements -->
+							<div
+								class="absolute -top-4 -right-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"
+							>
+							</div>
+							<div
+								class="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-500/20 rounded-full blur-xl"
+							>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="py-20 bg-gray-800/50">
+			<div class="max-w-4xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl font-bold mb-4">About me</h2>
+					<div
+						class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
+					>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-12 items-center">
+					<div class="space-y-6">
+						<p class="text-lg text-gray-300 leading-relaxed">
+							Web developer since 2000 with a strong passion for
+							software architecture and creative problem solving.
+							I specialize in building complex and scalable web
+							applications.
+						</p>
+						<p class="text-lg text-gray-300 leading-relaxed">
+							I am currently expanding my skills in mobile
+							development with Flutter, always exploring new
+							technologies and interesting challenges.
+						</p>
+						<div class="flex flex-wrap gap-3">
+							<span
+								class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium"
+								>Laravel</span
+							>
+							<span
+								class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium"
+								>PHP</span
+							>
+							<span
+								class="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium"
+								>JavaScript</span
+							>
+							<span
+								class="px-4 py-2 bg-red-500/20 text-red-300 rounded-full text-sm font-medium"
+								>Python</span
+							>
+							<span
+								class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium"
+								>Vue3</span
+							>
+							<span
+								class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium"
+								>Flutter</span
+							>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<div class="grid grid-cols-2 gap-6">
+							<div
+								class="text-center p-6 bg-gray-700/50 rounded-lg card-hover"
+							>
+								<div
+									class="text-3xl font-bold text-blue-400 mb-2"
+								>
+									25+
+								</div>
+								<div class="text-gray-300 text-sm">
+									Years of experience
+								</div>
+							</div>
+							<div
+								class="text-center p-6 bg-gray-700/50 rounded-lg card-hover"
+							>
+								<div
+									class="text-3xl font-bold text-purple-400 mb-2"
+								>
+									800+
+								</div>
+								<div class="text-gray-300 text-sm">
+									Completed projects
+								</div>
+							</div>
+						</div>
+						<div
+							class="text-center p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20 card-hover"
+						>
+							<div
+								class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2"
+							>
+								Software Architect
+							</div>
+							<div class="text-gray-300 text-sm">
+								Currently at infoFactory SRL
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience" class="py-20">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl font-bold mb-4">Experience</h2>
+					<div
+						class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
+					>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-blue-400">
+								Beliven SRL
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2020-2023</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">
+							Software Architect, Full Stack Developer
+						</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Udine, Italy
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Software architecture, database design and developer
+							coaching. Development with Laravel and Node.js, with
+							a focus on quality and performance.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
+								>Laravel</span
+							>
+							<span
+								class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded"
+								>NodeJs</span
+							>
+						</div>
+					</div>
+
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-green-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-green-400">
+								SupplHi SRL
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2019-2020</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">
+							Full Stack Developer
+						</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Udine, Italy
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Vertical project for supplier management. Java
+							Spring Boot backend, Angular 8 frontend, solutions
+							for complex forms with JSON.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded"
+								>Java</span
+							>
+							<span
+								class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded"
+								>Angular</span
+							>
+						</div>
+					</div>
+
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-purple-400">
+								OnlineSucces BV
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2017-2018</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">
+							Software Architect
+						</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Haarlem, Netherlands
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Big-data platform with 4 billion records. Python
+							backend, high-speed APIs, load balancer and Redis
+							caching.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-blue-600/20 text-blue-300 px-2 py-1 rounded"
+								>Python</span
+							>
+							<span
+								class="text-xs bg-red-600/20 text-red-300 px-2 py-1 rounded"
+								>Redis</span
+							>
+							<span
+								class="text-xs bg-yellow-600/20 text-yellow-300 px-2 py-1 rounded"
+								>ElasticSearch</span
+							>
+						</div>
+					</div>
+
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-red-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-red-400">
+								Freelance
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2016-2017</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">
+							Interim CTO
+						</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Amsterdam, Netherlands
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Strategic consulting for a European startup.
+							International team of 15, scalable SOA architecture,
+							high-traffic portals with millions of users and
+							transactions.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded"
+								>Consulting</span
+							>
+							<span
+								class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded"
+								>Architecture</span
+							>
+							<span
+								class="text-xs bg-green-600/20 text-green-300 px-2 py-1 rounded"
+								>Leadership</span
+							>
+						</div>
+					</div>
+
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-yellow-400">
+								GruppoGreenPower
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2011-2013</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">
+							CTO, Software Architect
+						</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Mirano, Italy
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Built a team from scratch, CRM with modular SOA
+							architecture, appointment geolocation, multi-level
+							marketing portal. Multi million software project.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
+								>CRM</span
+							>
+							<span
+								class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded"
+								>GMaps</span
+							>
+						</div>
+					</div>
+
+					<div
+						class="bg-gray-800/50 p-6 rounded-lg card-hover border border-gray-700/50 hover:border-indigo-500/30 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-4">
+							<h3 class="text-xl font-bold text-indigo-400">
+								Intuito Lab
+							</h3>
+							<span
+								class="text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full"
+								>2010-2015</span
+							>
+						</div>
+						<p class="text-gray-300 mb-2 font-semibold">Owner</p>
+						<p class="text-xs text-gray-500 mb-3 flex items-center">
+							<i data-lucide="map-pin" class="w-3 h-3 mr-1"></i>
+							Gorizia, Italy
+						</p>
+						<p class="text-sm text-gray-400 leading-relaxed">
+							Custom web apps, mobile development, geolocation.
+							Clients: Allianz, Philips, Domy. Innovative projects
+							such as QRWines.
+						</p>
+						<div class="mt-4 flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded"
+								>Startup</span
+							>
+							<span
+								class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded"
+								>Innovation</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex justify-center pt-8">
+					<button
+						class="bg-gray-700/50 text-gray-300 px-6 py-2 rounded-full hover:opacity-80 transition-all duration-300"
+					>
+						And more...
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Projects Section -->
+		<section id="projects" class="py-20 bg-gray-800/50">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl font-bold mb-4">
+						Projects & Repositories
+					</h2>
+					<div
+						class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
+					>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<!-- GitHub Projects -->
+					<div
+						class="bg-gray-700/50 p-8 rounded-lg card-hover border border-gray-600/50 hover:border-gray-400/50 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-2xl font-bold">GitHub Projects</h3>
+							<i
+								data-lucide="github"
+								class="w-8 h-8 text-gray-400"></i>
+						</div>
+						<p class="text-gray-300 mb-6 leading-relaxed">
+							Open-source packages and tools for Laravel and
+							Django developers.
+						</p>
+
+						<div class="space-y-4 mb-6">
+							<a
+								href="https://github.com/metalogico/laravel-formello"
+								target="_blank"
+								class="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors group"
+							>
+								<div
+									class="flex items-center justify-between mb-2"
+								>
+									<h4
+										class="font-semibold text-white group-hover:text-blue-400 transition-colors"
+									>
+										Laravel Formello
+									</h4>
+									<i
+										data-lucide="external-link"
+										class="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors"
+									></i>
+								</div>
+								<p class="text-sm text-gray-400">
+									Form builder package for Laravel
+								</p>
+							</a>
+
+							<a
+								href="https://github.com/metalogico/laravel-mocka"
+								target="_blank"
+								class="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors group"
+							>
+								<div
+									class="flex items-center justify-between mb-2"
+								>
+									<h4
+										class="font-semibold text-white group-hover:text-blue-400 transition-colors"
+									>
+										Laravel Mocka
+									</h4>
+									<i
+										data-lucide="external-link"
+										class="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors"
+									></i>
+								</div>
+								<p class="text-sm text-gray-400">
+									API mocking tool for Laravel
+								</p>
+							</a>
+
+							<a
+								href="https://github.com/metalogico/django-sonar"
+								target="_blank"
+								class="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors group"
+							>
+								<div
+									class="flex items-center justify-between mb-2"
+								>
+									<h4
+										class="font-semibold text-white group-hover:text-blue-400 transition-colors"
+									>
+										Django Sonar
+									</h4>
+									<i
+										data-lucide="external-link"
+										class="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors"
+									></i>
+								</div>
+								<p class="text-sm text-gray-400">
+									Monitoring and debugging tool for Django
+								</p>
+							</a>
+						</div>
+
+						<a
+							href="https://github.com/metalogico"
+							target="_blank"
+							class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold group"
+						>
+							View all repositories
+							<i
+								data-lucide="arrow-right"
+								class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+							></i>
+						</a>
+					</div>
+
+					<!-- Web Portfolio -->
+					<div
+						class="bg-gray-700/50 p-8 rounded-lg card-hover border border-gray-600/50 hover:border-gray-400/50 transition-all duration-300"
+					>
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-2xl font-bold">Web Portfolio</h3>
+							<i data-lucide="globe" class="w-8 h-8 text-gray-400"
+							></i>
+						</div>
+						<p class="text-gray-300 mb-6 leading-relaxed">
+							SaaS products and web applications built for real
+							users.
+						</p>
+
+						<div class="space-y-4 mb-6">
+							<a
+								href="https://heresmyshelf.com"
+								target="_blank"
+								class="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors group"
+							>
+								<div
+									class="flex items-center justify-between mb-2"
+								>
+									<h4
+										class="font-semibold text-white group-hover:text-purple-400 transition-colors"
+									>
+										Here's My Shelf
+									</h4>
+									<i
+										data-lucide="external-link"
+										class="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors"
+									></i>
+								</div>
+								<p class="text-sm text-gray-400">
+									Show off your boardgames collection.
+								</p>
+							</a>
+
+							<a
+								href="https://useissued.com"
+								target="_blank"
+								class="block p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-colors group"
+							>
+								<div
+									class="flex items-center justify-between mb-2"
+								>
+									<h4
+										class="font-semibold text-white group-hover:text-purple-400 transition-colors"
+									>
+										Issued.
+									</h4>
+									<i
+										data-lucide="external-link"
+										class="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors"
+									></i>
+								</div>
+								<p class="text-sm text-gray-400">
+									Personal comics media-center with mobile/web
+									reader.
+								</p>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tech Stack -->
+				<div class="text-center">
+					<h3 class="text-2xl font-bold mb-8">Primary Tech Stack</h3>
+					<div
+						class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4"
+					>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="code"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">PHP</div>
+							<div class="text-xs text-gray-400 mt-1">
+								20+ years
+							</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="palette"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">Laravel</div>
+							<div class="text-xs text-gray-400 mt-1">Expert</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="terminal"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">Python</div>
+							<div class="text-xs text-gray-400 mt-1">
+								6 years
+							</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="smartphone"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">Flutter</div>
+							<div class="text-xs text-gray-400 mt-1">
+								Learning
+							</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="database"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">MySQL</div>
+							<div class="text-xs text-gray-400 mt-1">
+								20+ years
+							</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="zap"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">Redis</div>
+							<div class="text-xs text-gray-400 mt-1">
+								Advanced
+							</div>
+						</div>
+						<div
+							class="tech-item bg-gray-700/30 p-4 rounded-lg group flex flex-col items-center text-center"
+						>
+							<i
+								data-lucide="search"
+								class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform"
+							></i>
+							<div class="text-sm font-medium">ElasticSearch</div>
+							<div class="text-xs text-gray-400 mt-1">
+								Advanced
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="py-20">
+			<div class="max-w-4xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl font-bold mb-4">Contact</h2>
+					<div
+						class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"
+					>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-12">
+					<div class="space-y-8">
+						<div>
+							<h3 class="text-2xl font-bold mb-6">
+								Let's talk about your project
+							</h3>
+							<p class="text-gray-300 text-lg leading-relaxed">
+								I'm always interested in new challenges and
+								collaboration opportunities. Whether you need a
+								software architecture consultant or an
+								experienced developer for your team, I'd be
+								happy to discuss it.
+							</p>
+						</div>
+
+						<div
+							class="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-6"
+						>
+							<h4
+								class="text-lg font-semibold mb-3 text-blue-300"
+							>
+								Specializations
+							</h4>
+							<ul class="space-y-2 text-gray-300">
+								<li class="flex items-center">
+									<span
+										class="w-2 h-2 bg-blue-400 rounded-full mr-3"
+									></span>
+									Scalable Software Architecture
+								</li>
+								<li class="flex items-center">
+									<span
+										class="w-2 h-2 bg-purple-400 rounded-full mr-3"
+									></span>
+									Laravel & Django Developer
+								</li>
+								<li class="flex items-center">
+									<span
+										class="w-2 h-2 bg-green-400 rounded-full mr-3"
+									></span>
+									Big Data Systems
+								</li>
+								<li class="flex items-center">
+									<span
+										class="w-2 h-2 bg-yellow-400 rounded-full mr-3"
+									></span>
+									Team Leadership & Mentoring
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<div
+							class="bg-gray-800/50 p-6 rounded-lg hover:bg-gray-800/70 transition-colors"
+						>
+							<div class="flex items-center space-x-4">
+								<div
+									class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center"
+								>
+									<i
+										data-lucide="mail"
+										class="w-6 h-6 text-blue-400"></i>
+								</div>
+								<div>
+									<div class="font-semibold text-white">
+										Email
+									</div>
+									<a
+										href="#"
+										id="email-link"
+										class="text-blue-400 hover:text-blue-300 transition-colors"
+									>
+										Click to reveal email
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="bg-gray-800/50 p-6 rounded-lg hover:bg-gray-800/70 transition-colors"
+						>
+							<div class="flex items-center space-x-4">
+								<div
+									class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center"
+								>
+									<i
+										data-lucide="linkedin"
+										class="w-6 h-6 text-blue-500"></i>
+								</div>
+								<div>
+									<div class="font-semibold text-white">
+										LinkedIn
+									</div>
+									<a
+										href="https://linkedin.com/in/michelebrandolin"
+										target="_blank"
+										class="text-blue-500 hover:text-blue-400 transition-colors"
+									>
+										/michelebrandolin
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-900 border-t border-gray-800">
+			<div class="max-w-6xl mx-auto px-6 py-12">
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="space-y-4">
+						<h3 class="text-xl font-bold gradient-text">
+							Michele Brandolin
+						</h3>
+						<p class="text-gray-400 leading-relaxed">
+							Software Architect & Full Stack Developer with 25
+							years of experience in building innovative and
+							scalable web solutions.
+						</p>
+						<div class="flex space-x-4">
+							<a
+								href="https://github.com/metalogico"
+								target="_blank"
+								class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
+							>
+								<i
+									data-lucide="github"
+									class="w-5 h-5 text-gray-400 hover:text-white"
+								></i>
+							</a>
+							<a
+								href="https://linkedin.com/in/michelebrandolin"
+								target="_blank"
+								class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
+							>
+								<i
+									data-lucide="linkedin"
+									class="w-5 h-5 text-gray-400 hover:text-white"
+								></i>
+							</a>
+							<a
+								href="mailto:michele.brandolin@gmail.com"
+								class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
+							>
+								<i
+									data-lucide="mail"
+									class="w-5 h-5 text-gray-400 hover:text-white"
+								></i>
+							</a>
+						</div>
+					</div>
+
+					<div class="space-y-4">
+						<h4 class="text-lg font-semibold text-white">
+							Quick Links
+						</h4>
+						<ul class="space-y-2">
+							<li>
+								<a
+									href="#about"
+									class="text-gray-400 hover:text-white transition-colors"
+									>About</a
+								>
+							</li>
+							<li>
+								<a
+									href="#experience"
+									class="text-gray-400 hover:text-white transition-colors"
+									>Experience</a
+								>
+							</li>
+							<li>
+								<a
+									href="#projects"
+									class="text-gray-400 hover:text-white transition-colors"
+									>Projects</a
+								>
+							</li>
+							<li>
+								<a
+									href="#contact"
+									class="text-gray-400 hover:text-white transition-colors"
+									>Contact</a
+								>
+							</li>
+						</ul>
+					</div>
+
+					<div class="space-y-4">
+						<h4 class="text-lg font-semibold text-white">
+							Technologies
+						</h4>
+						<div class="flex flex-wrap gap-2">
+							<span
+								class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
+								>Laravel</span
+							>
+							<span
+								class="text-xs bg-blue-500/20 text-green-300 px-2 py-1 rounded"
+								>Django</span
+							>
+							<span
+								class="text-xs bg-purple-500/20 text-white-300 px-2 py-1 rounded"
+								>PHP</span
+							>
+							<span
+								class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded"
+								>JavaScript</span
+							>
+							<span
+								class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded"
+								>Python</span
+							>
+							<span
+								class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded"
+								>Flutter</span
+							>
+							<span
+								class="text-xs bg-blue-600/20 text-blue-300 px-2 py-1 rounded"
+								>Vue</span
+							>
+							<span
+								class="text-xs bg-red-600/20 text-purple-300 px-2 py-1 rounded"
+								>And many others...</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+				>
+					<p class="text-gray-400 text-sm">
+						© 2025 Michele Brandolin. All rights reserved.
+					</p>
+					<p class="text-gray-400 text-sm mt-4 md:mt-0">
+						Built with Astro, Tailwind CSS and GSAP
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scroll to Top Button -->
+		<button
+			id="scroll-to-top"
+			class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 hover:scale-110 z-50"
+		>
+			<i data-lucide="chevron-up" class="w-6 h-6"></i>
+		</button>
+
+		<script>
+			import "../scripts.js";
+		</script>
+	</body>
+</html>
